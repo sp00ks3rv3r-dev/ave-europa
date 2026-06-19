@@ -9,11 +9,11 @@
 <meta property="og:url" content="https://sp00ks3rv3r-dev.github.io/ave-europa/" />
 <meta property="og:title" content="Vigilia · an autonomous editorial engine" />
 <meta property="og:description" content="Give it a worldview. It researches, writes, fact-checks, illustrates and publishes across multiple outlets. A demonstration prepared for Ave Europa." />
-<meta property="og:image" content="https://sp00ks3rv3r-dev.github.io/ave-europa/images/avelogo.png" />
+<meta property="og:image" content="https://sp00ks3rv3r-dev.github.io/ave-europa/images/hero-2.jpeg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Vigilia · an autonomous editorial engine" />
 <meta name="twitter:description" content="Give it a worldview. It researches, writes, fact-checks, illustrates and publishes across multiple outlets." />
-<meta name="twitter:image" content="https://sp00ks3rv3r-dev.github.io/ave-europa/images/avelogo.png" />
+<meta name="twitter:image" content="https://sp00ks3rv3r-dev.github.io/ave-europa/images/hero-2.jpeg" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='16'%20fill='%231b2c57'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Arial'%20font-size='18'%20font-weight='bold'%20fill='%23e0a528'%20text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,15 +60,18 @@
   @media(max-width:760px){.bar nav{display:none}}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;overflow:hidden;background:
-     radial-gradient(circle at 88% 12%,rgba(224,165,40,.10),transparent 40%),
-     radial-gradient(circle at 6% 90%,rgba(138,166,204,.16),transparent 46%),
-     var(--cream)}
-  .hero .wrap{position:relative;z-index:3;padding:84px 28px 120px}
-  .hero .kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);background:rgba(27,44,87,.06);border:1px solid var(--line);padding:8px 15px;border-radius:100px;margin-bottom:30px}
-  .hero h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1.0;color:var(--navy);max-width:22ch;margin-bottom:6px}
+  .hero{position:relative;overflow:hidden;background:#f4eedd}
+  .hero .heroimg{display:block;width:100%;max-width:1280px;margin:0 auto;height:auto}
+  .hero .wrap{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:1140px;padding:0 28px;z-index:3;display:flex;align-items:center}
+  .hero .herotext{max-width:48%}
+  .hero .kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);background:rgba(27,44,87,.06);border:1px solid var(--line);padding:8px 15px;border-radius:100px;margin-bottom:26px}
+  .hero h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.0;color:var(--navy);max-width:18ch;margin-bottom:6px}
   .hero h1 .hl{color:var(--gold);position:relative}
-  .hero .sub{margin-top:28px;font-size:clamp(1.05rem,1.7vw,1.28rem);max-width:54ch;color:#33415f;font-weight:400}
+  .hero .sub{margin-top:24px;font-size:clamp(1.02rem,1.5vw,1.2rem);color:#33415f;font-weight:400}
+  @media(max-width:880px){
+    .hero .wrap{position:static;transform:none;left:auto;display:block;padding:46px 28px 12px}
+    .hero .herotext{max-width:none}
+  }
   .hero .sub b{font-weight:700;color:var(--navy)}
   .hero .cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
   /* hero logo split */
@@ -219,6 +222,23 @@
   .dotr{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
   .dotr.block{background:var(--gold)}
   .dotr.fix{background:#7ec98f}
+  /* full example reader */
+  .sm-toggle{display:inline-flex;align-items:center;gap:6px;margin-bottom:26px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:6px}
+  .sm-toggle .ms-label{font-family:var(--cond);font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 8px 0 12px}
+  .sm-btn{border:none;background:none;cursor:pointer;padding:9px 18px;border-radius:100px;font-family:var(--cond);font-weight:700;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);transition:all .15s ease}
+  .sm-btn.active{background:var(--navy);color:#fff}
+  .sm-btn[data-t="plain"].active{background:var(--blue);color:#fff}
+  .reader{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;max-width:840px;box-shadow:0 22px 55px -32px rgba(27,44,87,.45)}
+  .reader .rimg{margin:0}
+  .reader .rimg img{width:100%;display:block;max-height:360px;object-fit:cover}
+  .reader .rtext{padding:32px 40px 42px}
+  @media(max-width:600px){.reader .rtext{padding:26px 24px 32px}}
+  .reader .rtitle{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.0;color:var(--navy);margin-bottom:14px}
+  .reader .rpane.plain .rtitle{font-family:var(--cond);font-weight:800;text-transform:none;letter-spacing:-.01em}
+  .reader .rstand{font-size:1.16rem;line-height:1.5;color:var(--muted);font-style:italic;margin-bottom:22px;max-width:54ch}
+  .reader .rbody p{font-size:1.04rem;line-height:1.75;color:#27324d;max-width:66ch}
+  .reader .rbody p + p{margin-top:18px}
+  .reader .rpane.plain .rstand{font-style:normal}
 
   /* ---------- scalability ---------- */
   .scale-rows{margin-top:40px;border-top:1px solid var(--line)}
@@ -289,17 +309,13 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <span class="kicker">Prepared for Ave Europa</span>
-    <h1 class="disp">Give it a worldview.<br><span class="hl">It does the editorial work.</span></h1>
-    <p class="sub"><b>Vigilia</b> researches European politics, writes the piece, checks every claim against real sources, makes the artwork, and publishes it to the web and to social.</p>
+    <div class="herotext">
+      <span class="kicker">Prepared for Ave Europa</span>
+      <h1 class="disp">Give it a worldview.<br><span class="hl">It does the editorial work.</span></h1>
+      <p class="sub"><b>Vigilia</b> researches, writes, fact-checks against real sources, illustrates and publishes, across long-form and plain editions. <b>Your team steers. The engine scales.</b></p>
+    </div>
   </div>
-
-  <!-- faint skyline -->
-  <div class="skyline" aria-hidden="true">
-    <svg viewBox="0 0 1440 140" preserveAspectRatio="xMidYMax meet" fill="currentColor">
-      <path d="M0 140 V96 h40 v-18 h24 v18 h30 v-40 l18-14 18 14 v40 h26 v-60 h40 v60 h34 v-28 h22 l8-12 8 12 h22 v28 h30 v-46 h36 v46 h28 v-20 h26 v-30 h14 v30 h26 v20 h40 v-52 h10 v-16 h8 v16 h10 v52 h44 v-34 h30 v34 h30 v-58 l20-10 20 10 v58 h30 v-26 h34 v26 h40 v-44 h28 v44 h30 v-30 h22 v-22 h12 v22 h22 v30 h40 v-50 h36 v50 h30 v-22 h26 v22 h44 v-40 h30 v40 h30 v-60 h40 v60 h36 v-30 h28 v30 h40 v-18 h24 v18 h40 V140 Z"/>
-    </svg>
-  </div>
+  <img class="heroimg" src="images/hero-2.jpeg" alt="Europe, from cultural heritage to digital infrastructure">
 </section>
 
 <!-- STAT RIBBON -->
@@ -388,6 +404,51 @@
         <div class="body"><h3>Clean and Strong, Not Poor and Pure</h3><p>A green Europe that deindustrialises hasn't saved the planet. It has only exported its emissions and its jobs.</p><span class="readlink">Read →</span></div>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- FULL EXAMPLE -->
+<section class="block" id="sample">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="display:block;margin-bottom:8px">A full example</span>
+    <p class="reveal" style="max-width:64ch;color:#33415f;font-size:1.06rem;margin-bottom:22px">Not a blurb. Here is one piece in full, in both editions the engine produces from a single argument. Switch between them.</p>
+    <div class="sm-toggle reveal">
+      <span class="ms-label">Read it as</span>
+      <button class="sm-btn active" data-t="policy" type="button">Policy desk</button>
+      <button class="sm-btn" data-t="plain" type="button">Plain edition</button>
+    </div>
+    <article class="reader reveal" id="reader">
+      <div class="rpane" data-pane="policy">
+        <figure class="rimg"><img src="images/p1/one-hand-on-the-brake.jpeg" alt="One Hand on the Brake"></figure>
+        <div class="rtext">
+          <h3 class="rtitle">One Hand on the Brake</h3>
+          <p class="rstand">A single national veto can freeze the whole Union. Federation is the end of paralysis, not the death of the nation.</p>
+          <div class="rbody">
+            <p>Europe does not lack power. It lacks the ability to use it. On the questions that decide a continent's place in the world, foreign policy, defence, enlargement, migration, the Union still moves by unanimity. Every member holds a veto, which means any one capital, for reasons entirely its own, can halt the other twenty-six. We call this consensus. It is closer to paralysis, dressed up as respect for sovereignty.</p>
+            <p>The cost is paid in public, again and again. Sanctions are announced, then watered down to the price of the most reluctant government. A common position on a war at the border arrives weeks after the moment that needed it has passed. Enlargement, the Union's single greatest instrument of influence, stalls because one leader has a grievance to trade. A body that can be stopped by one hand on the brake cannot lead, cannot deter, and over time cannot be taken seriously, by its partners or its rivals.</p>
+            <p>The veto survives because it feels safe. Each capital keeps it as insurance, a guarantee that nothing can be done to them against their will. But the guarantee is an illusion. The decisions that matter get made regardless; they are simply made elsewhere, in Washington, in Beijing, in Moscow, by powers that do not need twenty-seven signatures to act. A Union that cannot act does not protect its sovereignty. It quietly hands it away.</p>
+            <p>The answer is not a superstate that dissolves its nations into a single grey administration. Europe's strength has always been its plurality, and a serious federation guards it. It is a federation with the discipline to leave to each people what belongs to it, and the strength to decide together only what must be decided together. In practice that means a short, clear list: qualified-majority voting on foreign and security policy, an elected Commission president, and a written constitution that states plainly where power sits and who is accountable for it.</p>
+            <p>Critics call this overreach, a power grab by Brussels. The truth runs the other way. The status quo is the real surrender, because it leaves Europe a spectator while others write the rules it then has to live by. Pooling the few decisions that must be common is not the loss of sovereignty; it is the only way left to exercise it at the scale the century demands.</p>
+            <p>Europe is not too united. It is united in name and divided in every moment that counts. Ending the veto will not finish the federation, but it is where the repair begins.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rpane plain" data-pane="plain" hidden>
+        <figure class="rimg"><img src="images/P2/one-hand-on-the-brake-youth.png" alt="How one country can freeze the whole of Europe"></figure>
+        <div class="rtext">
+          <h3 class="rtitle">How one country can freeze the whole of Europe</h3>
+          <p class="rstand">One stubborn government can stop the other twenty-six. Here's why that quietly decides your future.</p>
+          <div class="rbody">
+            <p>Imagine twenty-seven friends trying to agree on where to eat, with one rule: everyone has to say yes. One person holds out, and nobody eats. That is roughly how Europe makes some of its most important decisions, the ones about foreign policy, defence and migration. Every country gets a veto. So any single government can block all the others, for whatever reason it likes.</p>
+            <p>It sounds fair. In practice it makes Europe slow exactly when the world is moving fast. While everyone waits for the last holdout to come around, the moment passes. Sanctions get watered down to whatever the most reluctant government will accept. A response to a war on the doorstep arrives weeks too late. And the really big calls about Europe's future end up being made somewhere else entirely: in Washington, in Beijing, in Moscow, by people who don't need twenty-seven signatures to act.</p>
+            <p>Every country keeps its veto because it feels like protection, a guarantee that nothing can be forced on it. But that protection is mostly an illusion. The decisions still happen. They just happen without Europe in the room. "Sovereignty" you can never actually use isn't really sovereignty; it's a nice word printed on a machine that won't start.</p>
+            <p>The fix isn't some giant super-state that swallows your country and flattens everything into one grey blur. The opposite, actually. The idea is to leave everything local to the people it belongs to, and only decide together the handful of things that have to be decided together, like whether Europe responds as one to a crisis. For those, let a strong majority decide instead of letting one hand pull the emergency brake.</p>
+            <p>Why does this matter to you? Because the slow, stuck version isn't the safe version. In a fast world, slow is just a quiet way of losing, of watching decisions about your security, your economy and your future get made by bigger players while Europe argues with itself.</p>
+            <p>Europe doesn't need to become one country. It needs to stop freezing itself every time one government says no.</p>
+          </div>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -575,6 +636,15 @@
         card.querySelector('.body p').textContent=card.dataset[k+'Sum'];
         card.querySelector('.ph').style.backgroundImage="url('"+card.dataset[k+'Img']+"')";
       });
+    });
+  });
+
+  // full-example reader toggle
+  document.querySelectorAll('.sm-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const t=btn.dataset.t;
+      document.querySelectorAll('.sm-btn').forEach(b=>b.classList.toggle('active',b===btn));
+      document.querySelectorAll('#reader .rpane').forEach(p=>{ p.hidden = p.dataset.pane!==t; });
     });
   });
 </script>
