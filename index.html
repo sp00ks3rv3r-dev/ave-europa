@@ -199,6 +199,26 @@
   .rolecol.vig li{color:#d9e2ec}
   .rolecol li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
   .rolesnote{margin-top:26px;font-family:var(--cond);font-weight:700;font-size:1.08rem;color:var(--navy)}
+  /* on the record */
+  .statband{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;background:var(--navy);border-radius:14px;padding:30px 28px}
+  @media(max-width:760px){.statband{grid-template-columns:repeat(2,1fr);gap:24px 14px}}
+  .statband .n{font-family:var(--display);font-size:clamp(1.7rem,3.6vw,2.5rem);color:var(--gold);line-height:1}
+  .statband .l{font-family:var(--cond);font-weight:600;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:#bcc8e0;margin-top:8px;line-height:1.35}
+  .record-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px;align-items:start}
+  @media(max-width:760px){.record-grid{grid-template-columns:1fr}}
+  .rec-copy h3{font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:1.1rem;color:var(--navy);margin-bottom:12px}
+  .rec-copy p{font-size:1rem;color:#33415f;line-height:1.6}
+  .rec-copy p + p{margin-top:12px}
+  .rec-copy .muted2{color:var(--muted);font-size:.95rem}
+  .rec-log{background:var(--navy);border-radius:12px;padding:22px;box-shadow:0 18px 40px -24px rgba(20,34,68,.6);font-family:var(--cond)}
+  .rec-log .logline{display:flex;align-items:center;gap:9px;font-weight:700;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:#fff;margin:10px 0 6px}
+  .rec-log .logline:first-child{margin-top:0}
+  .rec-log .logrow{font-size:.88rem;color:#cdd6ea;padding-left:18px;line-height:1.5}
+  .rec-log .logrow b{color:var(--gold)}
+  .rec-log .logrow.muted2{color:#8aa6cc}
+  .dotr{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+  .dotr.block{background:var(--gold)}
+  .dotr.fix{background:#7ec98f}
 
   /* ---------- scalability ---------- */
   .scale-rows{margin-top:40px;border-top:1px solid var(--line)}
@@ -259,6 +279,7 @@
       <a href="#what">What</a>
       <a href="#proof">The work</a>
       <a href="#how">How</a>
+      <a href="#record">Record</a>
       <a href="#scale">Scale</a>
       <a href="#team">Who</a>
     </nav>
@@ -314,20 +335,20 @@
     <div class="grid" id="gallery">
       <a class="card reveal" href="articles/one-hand-on-the-brake.html"
          data-p-href="articles/one-hand-on-the-brake.html" data-y-href="articles/one-hand-on-the-brake-youth.html"
-         data-p-img="images/p1/one-hand-on-the-brake.png" data-y-img="images/P2/one-hand-on-the-brake-youth.png"
+         data-p-img="images/p1/one-hand-on-the-brake.jpeg" data-y-img="images/P2/one-hand-on-the-brake-youth.png"
          data-p-title="One Hand on the Brake" data-y-title="How one country can freeze the whole of Europe"
          data-p-sum="A single national veto can freeze the whole Union. Federation is not a dream; it is the end of paralysis."
          data-y-sum="One stubborn government can stop the other twenty-six. Here's why it quietly decides your future.">
-        <div class="ph" style="background-image:url('images/p1/one-hand-on-the-brake.png')"></div>
+        <div class="ph" style="background-image:url('images/p1/one-hand-on-the-brake.jpeg')"></div>
         <div class="body"><h3>One Hand on the Brake</h3><p>A single national veto can freeze the whole Union. Federation is not a dream; it is the end of paralysis.</p><span class="readlink">Read →</span></div>
       </a>
       <a class="card reveal" href="articles/build-power-bank.html"
          data-p-href="articles/build-power-bank.html" data-y-href="articles/build-power-bank-youth.html"
-         data-p-img="images/p1/build-power-bank.png" data-y-img="images/P2/build-power-bank-youth.png"
+         data-p-img="images/p1/build-power-bank.jpeg" data-y-img="images/P2/build-power-bank-youth.png"
          data-p-title="Build, Power, Bank" data-y-title="Why Europe can't make its own phone chips"
          data-p-sum="A Europe that can't make its own chips, power, or payments is a Europe that takes orders."
          data-y-sum="The most advanced tech you use isn't built here. That's not a tech problem; it's a power problem.">
-        <div class="ph" style="background-image:url('images/p1/build-power-bank.png')"></div>
+        <div class="ph" style="background-image:url('images/p1/build-power-bank.jpeg')"></div>
         <div class="body"><h3>Build, Power, Bank</h3><p>A Europe that can't make its own chips, power, or payments is a Europe that takes orders.</p><span class="readlink">Read →</span></div>
       </a>
       <a class="card reveal" href="articles/an-army-not-an-alliance.html"
@@ -350,11 +371,11 @@
       </a>
       <a class="card reveal" href="articles/what-we-inherit-we-owe.html"
          data-p-href="articles/what-we-inherit-we-owe.html" data-y-href="articles/what-we-inherit-we-owe-youth.html"
-         data-p-img="images/p1/what-we-inherit-we-owe.png" data-y-img="images/P2/what-we-inherit-we-owe-youth.png"
+         data-p-img="images/p1/what-we-inherit-we-owe.jpeg" data-y-img="images/P2/what-we-inherit-we-owe-youth.png"
          data-p-title="What We Inherit, We Owe" data-y-title="Why your grandparents' language still matters"
          data-p-sum="A civilisation that forgets where it came from can't decide where it's going. Continuity is direction, not nostalgia."
          data-y-sum="You belong to your town, your country and Europe at once. None of them cancel the others out.">
-        <div class="ph" style="background-image:url('images/p1/what-we-inherit-we-owe.png')"></div>
+        <div class="ph" style="background-image:url('images/p1/what-we-inherit-we-owe.jpeg')"></div>
         <div class="body"><h3>What We Inherit, We Owe</h3><p>A civilisation that forgets where it came from can't decide where it's going. Continuity is direction, not nostalgia.</p><span class="readlink">Read →</span></div>
       </a>
       <a class="card reveal" href="articles/clean-and-strong.html"
@@ -412,8 +433,37 @@
   </div>
 </section>
 
+<!-- ON THE RECORD -->
+<section class="block" id="record">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="display:block;margin-bottom:8px">On the record</span>
+    <p class="reveal" style="max-width:64ch;color:#33415f;font-size:1.06rem;margin-bottom:30px">The same engine has been running live for roughly six weeks across two pipelines. Not a demo reel: a track record you can audit, because every step writes its output to disk.</p>
+    <div class="statband reveal">
+      <div class="st"><div class="n">~6 wks</div><div class="l">Running live, two pipelines</div></div>
+      <div class="st"><div class="n">145</div><div class="l">Articles published</div></div>
+      <div class="st"><div class="n">3,000+</div><div class="l">Steps, each with a readable record</div></div>
+      <div class="st"><div class="n">0.7</div><div class="l">Quality bar per step (avg 0.85)</div></div>
+      <div class="st"><div class="n">~24/wk</div><div class="l">Cadence, hands-off</div></div>
+    </div>
+    <div class="record-grid reveal">
+      <div class="rec-copy">
+        <h3>It blocks rather than ships</h3>
+        <p>Every step is scored against a threshold. If a draft can't clear the bar after its retries, the pipeline halts and flags us, rather than publishing something weak. We fix the one step, and it resumes from exactly where it paused. Nothing reaches an outlet that hasn't passed.</p>
+        <p class="muted2">It is not a blackbox. When a step fails its bar, or an upstream service drops, it stops and tells you why, instead of failing silently.</p>
+      </div>
+      <div class="rec-log" aria-label="example of a blocked and resumed run">
+        <div class="logline"><span class="dotr block"></span>Blocked · step: editor</div>
+        <div class="logrow">score <b>0.50</b> vs <b>0.70</b> threshold · after 3 attempts</div>
+        <div class="logrow">reason: a passage was restated verbatim across sections</div>
+        <div class="logline"><span class="dotr fix"></span>Halted &amp; flagged → fixed → resumed</div>
+        <div class="logrow muted2">paused at the failing step, continued from there once it cleared the bar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WORKING WITH IT -->
-<section class="block" id="roles">
+<section class="block alt" id="roles">
   <div class="wrap">
     <span class="eyebrow reveal" style="display:block;margin-bottom:8px">How you would work with it</span>
     <p class="reveal" style="max-width:62ch;color:#33415f;font-size:1.06rem;margin-bottom:34px">Vigilia is not a replacement for the people who give a publication its judgement. It is the desk underneath them. The line between the two stays where you put it.</p>
